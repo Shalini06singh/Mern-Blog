@@ -1,0 +1,52 @@
+{{>header}}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-3">
+            {{>sidebar}}
+        </div>
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h2>Blog</h2>
+                    <div>
+                        <a href="/admin/blog/create" class="btn btn-primary">Add Blog</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Slug</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each blogs}}
+                            <tr>
+                                <td><img src="{{this.image}}" alt="{{this.name}}"></td>
+                                <td>{{this.title}}</td>
+                                <td>{{this.slug}}</td>
+                                <td>{{this.description}}</td>
+                                <td>
+                                    <a href="/admin/blog/edit/{{this._id}}" class="btn btn-warning">Edit</a>
+                                    <button class="btn btn-danger"
+                                        onclick="document.getElementById('blog-{{this._id}}').submit()">Delete</button>
+
+                                    <form action="/admin/blog/delete/{{this._id}}" method="post" id="blog-{{this._id}}">
+
+                                    </form>
+                                </td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>footer}}

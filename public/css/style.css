@@ -1,0 +1,51 @@
+
+html,body { 
+	height: 100%; 
+	background: url('https://img.freepik.com/free-vector/grunge-watercolor-background-using-pastel-colours_1048-6530.jpg?w=740&t=st=1706415983~exp=1706416583~hmac=8bac675c7d2059ef80e0f202d90f2ffdd5fa33594a54002ce2f72c37a40853f5');
+}
+a{
+	text-decoration: none;
+}
+
+.global-container{
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	height:100%;
+	
+
+}
+
+.login-form form{
+	padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.login-form.card-title{ font-weight:300; }
+
+.login-form.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+
+.login-form{ 
+	width:330px;
+	margin:20px;
+}
+
+.login-form .sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.detail-image img{
+	height: 50%;
+	width: 50%;
+}
+  
+.adjust-img img {
+	height: 35%;
+	width: 35%;
+}

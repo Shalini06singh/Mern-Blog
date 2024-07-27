@@ -1,0 +1,57 @@
+{{>header}}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-3">
+            {{>sidebar}}
+
+        </div>
+        <div class="col-sm-9">
+            
+            <div class="card">
+ <div class="card-header d-flex justify-content-between">
+    <h1>User</h1>
+    <div>
+
+  <a href="/admin/user/create" class="btn btn-success btn-lg">Add User</a>
+    </div>
+ </div>
+  <div class="card-body">
+    
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each users}}
+                            <tr>
+                                <td><img src="{{this.image}}" alt="{{this.name}}"></td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.contact}}</td>
+                                <td>
+                                    <a href="/admin/user/edit/{{this._id}}" class="btn btn-warning">Edit</a>
+                                    <button class="btn btn-danger"
+                                        onclick="document.getElementById('user-{{this._id}}').submit()">Delete</button>
+
+                                    <form action="/admin/user/delete/{{this._id}}" method="post" id="user-{{this._id}}">
+
+                                    </form>
+                                </td>
+                            </tr>
+                            {{/each}}
+  </tbody>
+</table>
+
+
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+{{>footer}} 

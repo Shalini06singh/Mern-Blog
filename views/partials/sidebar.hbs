@@ -1,0 +1,22 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-primary">SideBar</li>
+  <li class="list-group-item list-group-item-info">
+    <a href="/admin">Dashboard</a>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <a href="/admin/blogs">Blogs</a>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <a href="/admin/user">Users</a>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <a href="#" onclick="document.getElementById('logout-sidebar').submit()">Logout</a>
+    <form
+      action="/admin/logout"
+      method="post"
+      id="logout-sidebar"
+    >
+
+    </form>
+  </li>
+</ul>

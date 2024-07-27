@@ -1,0 +1,68 @@
+{{>header}}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-3">
+            {{>sidebar}}
+
+        </div>
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h5>
+                       Edit Blog
+                    </h5>
+                    <div>
+                        <a href="/admin/blogs" class="btn btn-success btn-lg">Back</a>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <form action="/admin/blog/update/{{blog._id}}" method="post" enctype="multipart/form-data">
+
+                   
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" value="{{blog.title}}">
+                    </div>
+                     <div class="mb-3">
+                        <label for="slug" class="form-label">Slug</label>
+                        <input type="text" class="form-control" id="slug" name="slig" value="{{blog.slug}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                        <div class="mt-2">
+                            <img src="{{blog.image}}" alt="">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" rows="5" name="description">{{blog.description}}</textarea>
+                    </div>
+                      <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="" hidden>Select Status</option>
+                                {{#if blog.status }}
+                                    <option value="1" selected>Active</option>
+                                {{else}}
+                                    <option value="1">Active</option>
+                                {{/if}}
+
+                                {{#if blog.status }}
+                                    <option value="0">Inactive</option>
+                                {{else}}
+                                    <option value="0" selected>Inactive</option>
+                                {{/if}}
+                           </select>
+                        </div>
+                    <button class="btn btn-primary">Submit</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>footer}}

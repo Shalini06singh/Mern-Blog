@@ -1,0 +1,48 @@
+{{>header}}
+     
+    
+
+    <div class="container mt-4">
+       <div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Register</h3>
+		<div class="card-text">
+			
+			<form action="/register" method="post">
+				<div class="form-group mb-2">
+					<label for="name">Name</label>
+					<input type="text" class="form-control form-control-sm" id="name" name="name">
+					{{#if errors.name}}
+					<p class="text-danger">{{errors.name}}</p>
+					{{/if}}
+				</div>
+				<div class="form-group mb-2">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control form-control-sm" id="email" name="email">
+					{{#if errors.email}}
+					<p class="text-danger">{{errors.email}}</p>
+					{{/if}}
+				</div>
+				<div class="form-group mb-2">
+					<label for="password">Password</label>
+					<a href="/forget-password" style="float:right;font-size:12px;">Forgot password?</a>
+					<input type="password" class="form-control form-control-sm" id="password" name="password">
+					{{#if errors.password}}
+					<p class="text-danger">{{errors.password}}</p>
+					{{/if}}
+				</div>
+				<button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+				
+				<div class="sign-up">
+					Already have an account? <a href="/login">Login</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+    </div>
+
+{{>footer}}

@@ -1,0 +1,73 @@
+
+{{>header}}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-3">
+            {{>sidebar}}
+
+        </div>
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h5>
+                      Edit User
+                    </h5>
+                    <div>
+                        <a href="/admin/user" class="btn btn-primary">Back</a>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <form action="/admin/user/update/{{user._id}}" method="post" enctype="multipart/form-data">
+
+                   
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{user.name}}">
+                    </div>
+                     <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{user.email}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                        <div class="mt-2">
+                            <img src="{{user.image}}"
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Contact Number</label>
+                        <input type="contact" class="form-control" id="contact" name="contact" value="{{user.contact}}">
+                    </div>
+                    
+                     <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="">Select Status</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                             {{#if user.status }}
+                                    <option value="1" selected>Active</option>
+                                {{else}}
+                                    <option value="1">Active</option>
+                                {{/if}}
+
+                                {{#if user.status }}
+                                    <option value="0">Inactive</option>
+                                {{else}}
+                                    <option value="0" selected>Inactive</option>
+                                {{/if}}
+                            
+                        </select>
+                       
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>footer}}
