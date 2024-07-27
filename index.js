@@ -19,11 +19,11 @@ const app = express();
 
 //middleware
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(cors({
-    origin: ["https://mern-blog-ten-alpha.vercel.app/"],
-    methods:["GET","POST","PUT","DELETE"],
-    credentials:true
-}))
+// app.use(cors({
+//     origin: ["https://mern-blog-ten-alpha.vercel.app/"],
+//     methods:["GET","POST","PUT","DELETE"],
+//     credentials:true
+// }))
 app.use(session({
     secret: 'blog',
     resave: false,
